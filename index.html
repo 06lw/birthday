@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ff4fa3">
+  <title>Happy Birthday, Luchy! 💖</title>
+  <style>
+    :root { --pink:#ff4fa3; --purple:#8b5cf6; --ink:#40204f; --cream:#fff8fc; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); font-family: "Trebuchet MS", Arial, sans-serif; background:linear-gradient(145deg,#fff0f8,#f3e9ff 48%,#e6f8ff); overflow-x:hidden; }
+    button, a { font:inherit; }
+    .nav { position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:13px clamp(16px,4vw,48px); color:white; background:linear-gradient(90deg,#ff4fa3dd,#8157f6e8); backdrop-filter:blur(12px); box-shadow:0 5px 22px #682a7a22; }
+    .brand { font-weight:900; font-size:1.08rem; white-space:nowrap; }
+    .navlinks { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:clamp(10px,2vw,24px); }
+    .nav a { color:white; text-decoration:none; font-weight:700; font-size:.92rem; }
+    .nav a:hover { text-decoration:underline; }
+    .hero { min-height:78vh; position:relative; display:grid; place-items:center; text-align:center; padding:72px 20px 90px; overflow:hidden; background:radial-gradient(ellipse at 15% 20%,#ffb7d9 0,transparent 38%),radial-gradient(ellipse at 90% 15%,#b4a1ff 0,transparent 36%),linear-gradient(135deg,#ffc7e5,#ffe8bc 50%,#b9edff); }
+    .hero:before { content:""; position:absolute; inset:0; opacity:.28; background-image:radial-gradient(#fff 2px,transparent 2px); background-size:35px 35px; pointer-events:none; }
+    .hero-inner { position:relative; max-width:850px; }
+    .eyebrow { display:inline-block; padding:9px 16px; border:1px solid #ffffffb5; border-radius:999px; background:#ffffff7a; font-weight:800; }
+    h1 { margin:18px 0 12px; font-size:clamp(3rem,10vw,7rem); line-height:.95; letter-spacing:-.055em; color:#fff; text-shadow:0 5px 0 #ff4fa3,0 10px 26px #a62e8a55; }
+    h1 span { display:block; color:#ff3194; text-shadow:0 3px #fff,0 8px 18px #a62e8a30; }
+    .hero p { max-width:620px; margin:20px auto 26px; font-size:clamp(1.05rem,2.6vw,1.3rem); line-height:1.65; }
+    .btn { border:0; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:15px 23px; border-radius:999px; color:white; font-weight:900; background:linear-gradient(100deg,#ff398f,#a24fff); box-shadow:0 8px 0 #b92f87,0 13px 24px #c347a944; transition:transform .18s,filter .18s; }
+    .btn:hover { transform:translateY(-3px) scale(1.02); filter:saturate(1.15); }
+    .btn:active { transform:translateY(3px); box-shadow:0 3px 0 #b92f87; }
+    .music { position:fixed; z-index:20; right:17px; bottom:17px; border:0; border-radius:999px; padding:12px 16px; color:#fff; background:#532a83; box-shadow:0 5px 18px #391a5433; cursor:pointer; font-weight:800; }
+    .float { position:absolute; animation:float 5s ease-in-out infinite; font-size:clamp(2rem,5vw,4.5rem); filter:drop-shadow(0 6px 8px #d94b9140); }
+    .f1 { left:7%; top:20%; }.f2 { right:8%; top:16%; animation-delay:-2s; }.f3 { left:13%; bottom:15%; animation-delay:-1s; }.f4 { right:13%; bottom:18%; animation-delay:-3s; }
+    @keyframes float { 0%,100%{transform:translateY(0) rotate(-7deg)} 50%{transform:translateY(-19px) rotate(7deg)} }
+    section { padding:72px clamp(18px,5vw,70px); }
+    .section-head { text-align:center; max-width:700px; margin:0 auto 30px; }
+    h2 { margin:0 0 12px; font-size:clamp(2rem,5vw,3.2rem); color:#8a36bd; }
+    .section-head p { line-height:1.6; }
+    .memory-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; max-width:1050px; margin:auto; }
+    .memory { padding:12px 12px 18px; background:white; border-radius:12px; box-shadow:0 12px 30px #8d4f9a20; transform:rotate(var(--tilt)); transition:transform .2s; }
+    .memory:hover { transform:rotate(0) translateY(-5px); }
+    .photo { aspect-ratio:4/3; display:grid; place-items:center; overflow:hidden; border-radius:7px; background:linear-gradient(135deg,#ffc2df,#d9c5ff,#bceeff); color:#633d77; text-align:center; font-weight:800; }
+    .photo img { width:100%; height:100%; object-fit:cover; display:block; }
+    .memory p { margin:13px 4px 0; text-align:center; font-weight:800; }
+    .letter-wrap { background:linear-gradient(135deg,#f6d9ff,#ffe1ef); }
+    .letter { max-width:760px; margin:auto; padding:clamp(22px,5vw,48px); border:2px dashed #e7a6e4; border-radius:24px; background:#fffdfbdf; box-shadow:0 16px 40px #873bb31c; font-size:1.08rem; line-height:1.9; }
+    .letter .sign { color:#d52d91; font-weight:900; }
+    .surprise { text-align:center; background:radial-gradient(ellipse at 10% 20%,#ffc1df,transparent 40%),radial-gradient(ellipse at 90% 80%,#b8c8ff,transparent 45%),linear-gradient(120deg,#ffdaee,#fff0bc,#d6f6ff); }
+    .gift { font-size:clamp(4rem,10vw,7rem); display:block; margin:12px; animation:bounce 1.8s infinite; }
+    @keyframes bounce { 0%,100%{transform:translateY(0) rotate(-5deg)} 50%{transform:translateY(-12px) rotate(5deg)} }
+    .hidden { display:none; }
+    .reveal { max-width:650px; margin:26px auto 0; padding:24px; border-radius:22px; background:#ffffffd9; box-shadow:0 12px 30px #8d4f9a22; line-height:1.8; animation:pop .45s ease-out; }
+    @keyframes pop { from{opacity:0;transform:scale(.8)} to{opacity:1;transform:scale(1)} }
+    footer { text-align:center; padding:28px 16px; color:#754d86; font-weight:700; }
+    .heart { position:fixed; z-index:30; bottom:-40px; pointer-events:none; animation:rise linear forwards; }
+    @keyframes rise { to { transform:translateY(-115vh) rotate(360deg); opacity:0; } }
+    .confetti { position:fixed; z-index:29; top:-15px; width:9px; height:14px; pointer-events:none; animation:fall linear forwards; }
+    @keyframes fall { to { transform:translateY(110vh) rotate(720deg); opacity:.85; } }
+    @media(max-width:700px) { .nav { align-items:flex-start; flex-direction:column; }.navlinks { justify-content:flex-start; gap:14px; }.hero { min-height:70vh; }.f1{left:3%}.f2{right:3%}.memory-grid{grid-template-columns:1fr;max-width:420px}.memory{transform:none} section{padding-top:55px;padding-bottom:55px} }
+    @media(prefers-reduced-motion:reduce) { *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important} }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">💗 Luchy's Birthday</div>
+    <div class="navlinks">
+      <a href="#home">Home</a><a href="#memories">Memories</a><a href="#letter">Letter</a><a href="#surprise">Surprise 🎁</a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero" id="home">
+      <span class="float f1" aria-hidden="true">💖</span><span class="float f2" aria-hidden="true">🎈</span>
+      <span class="float f3" aria-hidden="true">🌸</span><span class="float f4" aria-hidden="true">💝</span>
+      <div class="hero-inner">
+        <span class="eyebrow">🌷 A whole day just for you 🌷</span>
+        <h1>Happy Birthday <span>Luchy! ♡</span></h1>
+        <p>Today we celebrate someone truly special. Thank you for your love, your kindness, and all the little things that make life brighter. You deserve all the happiness in the world! 💕</p>
+        <button class="btn" onclick="openSurprise()">🎁 Open Your Surprise 💗</button>
+      </div>
+    </header>
+
+    <section id="memories">
+      <div class="section-head">
+        <h2>💞 Our Favorite Memories</h2>
+        <p>A few little moments that mean so much. Replace these sample cards with your own favorite photos!</p>
+      </div>
+      <div class="memory-grid">
+        <article class="memory" style="--tilt:-2deg">
+          <div class="photo"><img src="mom1.jpg" alt="A favorite photo with Luchy" onerror="this.style.display='none';this.parentElement.innerHTML='📷<br> Add mom1.jpg here';"></div>
+          <p>My favorite moments 💗</p>
+        </article>
+        <article class="memory" style="--tilt:2deg">
+          <div class="photo"><img src="mom2.jpg" alt="A happy memory with Luchy" onerror="this.style.display='none';this.parentElement.innerHTML='🌸<br> Add mom2.jpg here';"></div>
+          <p>Always there for me 🫶</p>
+        </article>
+        <article class="memory" style="--tilt:-1deg">
+          <div class="photo"><img src="mom3.jpg" alt="A special family memory" onerror="this.style.display='none';this.parentElement.innerHTML='✨<br> Add mom3.jpg here';"></div>
+          <p>So grateful for you 💖</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="letter-wrap" id="letter">
+      <div class="section-head"><h2>💌 A Little Letter for You</h2><p>From my heart to yours.</p></div>
+      <div class="letter">
+        Dear Luchy,<br><br>
+        Happy Birthday to the most amazing mom! Thank you for loving me, supporting me, and making ordinary days feel special. I hope this new year of your life brings you laughter, peace, good health, and every beautiful thing you deserve.<br><br>
+        No website or gift could ever show how much you mean to me, but I made this little corner of the internet just for you. I hope it makes you smile today and reminds you how loved you are. 💗<br><br>
+        <span class="sign">I love you so much, Luchy! ♡<br>— Your favorite person 😉</span>
+      </div>
+    </section>
+
+    <section class="surprise" id="surprise">
+      <div class="section-head">
+        <h2>Ready for a Little Surprise?</h2>
+        <p>There's one more thing I want you to know…</p>
+      </div>
+      <span class="gift" aria-hidden="true">🎁</span>
+      <button class="btn" onclick="openSurprise()">💝 Reveal Your Surprise!</button>
+      <div class="reveal hidden" id="reveal" aria-live="polite">
+        <h2>🌟 You are so loved, Luchy! 🌟</h2>
+        <p>If I could give you one thing, it would be the ability to see yourself through my eyes. You would see how wonderful, strong, and special you are. I hope your birthday is as beautiful as the love you give everyone around you. Happy Birthday, Mom! 💖🎂</p>
+        <p>Make a wish… and never forget how much you mean to me. 🥹💕</p>
+      </div>
+    </section>
+  </main>
+  <footer>Made with all my love for Luchy 💗 Happy Birthday!</footer>
+
+  <button class="music" id="musicButton" onclick="toggleMusic()" aria-pressed="false">♫ Play birthday tune</button>
+
+  <script>
+    // Floating hearts and confetti are created in the browser—no extra libraries needed.
+    function floatHeart() {
+      const el = document.createElement('span');
+      el.className = 'heart';
+      el.textContent = ['💗','💖','💕','💘','✨'][Math.floor(Math.random()*5)];
+      el.style.left = Math.random()*100 + 'vw';
+      el.style.fontSize = (16 + Math.random()*24) + 'px';
+      const duration = 4 + Math.random()*4;
+      el.style.animationDuration = duration + 's';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), duration*1000);
+    }
+    setInterval(floatHeart, 750);
+
+    function confettiBurst() {
+      const colors = ['#ff4fa3','#8b5cf6','#ffbd4a','#36c9e8','#7bd88f'];
+      for (let i=0; i<95; i++) {
+        const bit = document.createElement('i');
+        bit.className = 'confetti';
+        bit.style.left = Math.random()*100 + 'vw';
+        bit.style.background = colors[Math.floor(Math.random()*colors.length)];
+        bit.style.animationDuration = (2+Math.random()*3) + 's';
+        bit.style.animationDelay = Math.random()*.7 + 's';
+        document.body.appendChild(bit);
+        setTimeout(() => bit.remove(), 6000);
+      }
+    }
+    function openSurprise() {
+      const reveal = document.getElementById('reveal');
+      reveal.classList.remove('hidden');
+      confettiBurst();
+      reveal.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+
+    // A tiny original tune made with Web Audio. Browsers only allow sound after a click.
+    let audioContext = null, musicTimer = null, noteIndex = 0, musicOn = false;
+    const notes = [523.25,523.25,587.33,523.25,698.46,659.25,523.25,523.25,587.33,523.25,783.99,698.46];
+    function playNote(freq, start) {
+      if (!audioContext) return;
+      const osc = audioContext.createOscillator();
+      const gain = audioContext.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(0.12, start+0.025);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start+0.32);
+      osc.connect(gain); gain.connect(audioContext.destination);
+      osc.start(start); osc.stop(start+0.34);
+    }
+    function toggleMusic() {
+      const button = document.getElementById('musicButton');
+      if (!musicOn) {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) { button.textContent = 'Music is not supported in this browser'; return; }
+        audioContext = audioContext || new AudioCtx();
+        audioContext.resume();
+        musicOn = true;
+        button.textContent = '♫ Pause birthday tune';
+        button.setAttribute('aria-pressed','true');
+        playNote(notes[noteIndex % notes.length], audioContext.currentTime);
+        musicTimer = setInterval(() => {
+          if (!musicOn || !audioContext) return;
+          noteIndex = (noteIndex+1) % notes.length;
+          playNote(notes[noteIndex], audioContext.currentTime);
+        }, 380);
+      } else {
+        musicOn = false;
+        clearInterval(musicTimer);
+        button.textContent = '♫ Play birthday tune';
+        button.setAttribute('aria-pressed','false');
+      }
+    }
+  </script>
+</body>
+</html>
